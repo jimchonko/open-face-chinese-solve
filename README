@@ -1,1 +1,4 @@
-bonuses are defined in the bonus.py file.
+
+single_place_card is the main program that takes an existing incomplete hand, opponents cards that are out, and the next card that needs to be placed in the hand.  
+
+works when there are up to 4 deals remaining to be dealt, however quickly the number of permutations grow and takes an inconvenient amount of time to run.
