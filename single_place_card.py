@@ -173,31 +173,24 @@ def single_place_card(hand, used_cards, card):
 	tot_middle=0
 	tot_bottom=0
 	
+
 	count=0
 	for hand in final_permutations:
 	
-		placed_top_ind=0
-		placed_middle_ind=0		
-		placed_bottom_ind=0
-	
+		# calculate the expectation value for that placement
 		if hand[0].count(card)>0:
-			placed_top_ind=1
-		elif hand[1].count(card)>0:
-			placed_middle_ind=1
-		elif hand[2].count(card)>0:
-			placed_bottom_ind=1
-		
-		if placed_top_ind==1:
 			cnt_top=cnt_top+1
 			tot_top=tot_top+points[count]
-		elif placed_middle_ind==1:
+		elif hand[1].count(card)>0:
 			cnt_middle=cnt_middle+1
 			tot_middle=tot_middle+points[count]
-		elif placed_bottom_ind==1:
+		elif hand[2].count(card)>0:
 			cnt_bottom=cnt_bottom+1
 			tot_bottom=tot_bottom+points[count]
 			
 		count=count+1
+	
+	print('count top: ', cnt_top)
 	
 	if cnt_top>0:
 		expected_top = tot_top/cnt_top
