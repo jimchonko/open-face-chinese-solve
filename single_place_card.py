@@ -149,6 +149,37 @@ def single_place_card(hand, used_cards, card):
 		print('number of permutations: ', len(final_permutations))
 		print('finished creating permutations')
 	
+	static4=copy.deepcopy(final_permutations)
+	
+	if n_remaining_draw>=4:
+		count=0
+		print('start fourth loop')
+		for hand4 in static4:
+			count=count+1
+			
+			#print('loop number: ', count)
+			#print('this is hand for fourth loop: ', hand4)
+				
+			# determine remaining cards in deck
+			unavailable_cards = [list(filter(('').__ne__, hand4[0])), list(filter(('').__ne__, hand4[1])), list(filter(('').__ne__, hand4[2])), used_cards, [card]]
+			
+			available_cards = copy.deepcopy(deck)
+			
+			for x in unavailable_cards:
+				for y in x:
+					available_cards = list(filter((y).__ne__, available_cards))
+			
+			#print('unavailable cards: ', unavailable_cards)
+			#print('available cards: ', available_cards)
+			
+			n_available_cards = len(available_cards)
+			#print('number of available cards: ', n_available_cards)
+				
+			final_permutations.extend(create_permutation.create_permutation([hand4], available_cards))
+	
+		del final_permutations[0:len(static4)]
+		print('number of permutations: ', len(final_permutations))
+		print('finished creating permutations')
 	
 	
 	
@@ -191,6 +222,8 @@ def single_place_card(hand, used_cards, card):
 		count=count+1
 	
 	print('count top: ', cnt_top)
+	print('count middle: ', cnt_middle)
+	print('count bottom: ', cnt_bottom)
 	
 	if cnt_top>0:
 		expected_top = tot_top/cnt_top
