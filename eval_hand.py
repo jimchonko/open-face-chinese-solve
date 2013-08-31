@@ -8,21 +8,21 @@ def eval_hand(hand):
 	
 	# create list of card values
 	values=[x[0].upper() for x in hand]
-	print(values)
+	#print(values)
 	
 	# create list of suits
 	suits=[x[1].upper() for x in hand]
-	print(suits)
+	#print(suits)
 	
 	# evaluate strength
 	
 	# duplicate card values
 	value_cnt=collections.Counter(values)
-	print(value_cnt)
+	#print(value_cnt)
 	
 	# duplicate suit values
 	suit_cnt=collections.Counter(suits)
-	print(suit_cnt)
+	#print(suit_cnt)
 	
 	# determine the card value with the most duplicates
 	primary_count=1
@@ -32,16 +32,16 @@ def eval_hand(hand):
 			primary_value=card
 			primary_count=value_cnt[card]
 			
-	print(primary_value)
-	print(primary_count)
+	#print(primary_value)
+	#print(primary_count)
 	
 	# determine the card value with the second most duplicates
 
 	secondary_values=list(filter((primary_value).__ne__, values))
-	print(secondary_values)
+	#print(secondary_values)
 	
 	secondary_value_cnt=collections.Counter(secondary_values)
-	print(secondary_value_cnt)
+	#print(secondary_value_cnt)
 	
 	secondary_count=1
 	secondary_value=secondary_values[0]
@@ -50,8 +50,8 @@ def eval_hand(hand):
 			secondary_value=secondary_card
 			secondary_count=secondary_value_cnt[secondary_card]
 			
-	print(secondary_value)
-	print(secondary_count)
+	#print(secondary_value)
+	#print(secondary_count)
 	
 	
 	# determine the suit with the most duplicates
@@ -62,7 +62,7 @@ def eval_hand(hand):
 		else:
 			flush_ind=0
 			
-	print(flush_ind)
+	#print(flush_ind)
 	
 	
 	# determine if there is a straight
