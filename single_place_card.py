@@ -93,8 +93,8 @@ def single_place_card(hand, used_cards, card):
 		for hand2 in static2:
 			count=count+1
 			
-			print('loop number: ', count)
-			print('this is hand for second loop: ', hand2)
+			#print('loop number: ', count)
+			#print('this is hand for second loop: ', hand2)
 				
 			# determine remaining cards in deck
 			unavailable_cards = [list(filter(('').__ne__, hand2[0])), list(filter(('').__ne__, hand2[1])), list(filter(('').__ne__, hand2[2])), used_cards, [card]]
@@ -109,7 +109,7 @@ def single_place_card(hand, used_cards, card):
 			#print('available cards: ', available_cards)
 			
 			n_available_cards = len(available_cards)
-			print('number of available cards: ', n_available_cards)
+			#print('number of available cards: ', n_available_cards)
 				
 			final_permutations.extend(create_permutation.create_permutation([hand2], available_cards))
 	
@@ -125,8 +125,8 @@ def single_place_card(hand, used_cards, card):
 		for hand3 in static3:
 			count=count+1
 			
-			print('loop number: ', count)
-			print('this is hand for third loop: ', hand3)
+			#print('loop number: ', count)
+			#print('this is hand for third loop: ', hand3)
 				
 			# determine remaining cards in deck
 			unavailable_cards = [list(filter(('').__ne__, hand3[0])), list(filter(('').__ne__, hand3[1])), list(filter(('').__ne__, hand3[2])), used_cards, [card]]
@@ -141,7 +141,7 @@ def single_place_card(hand, used_cards, card):
 			#print('available cards: ', available_cards)
 			
 			n_available_cards = len(available_cards)
-			print('number of available cards: ', n_available_cards)
+			#print('number of available cards: ', n_available_cards)
 				
 			final_permutations.extend(create_permutation.create_permutation([hand3], available_cards))
 	
