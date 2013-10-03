@@ -1,4 +1,5 @@
 # evaluate the strength of a hand
+# eval_hand.eval_hand(['as','ks','qs','js','ts'])
 def eval_hand(hand):
 	# sort hand
 	hand.sort()
